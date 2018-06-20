@@ -45,8 +45,8 @@ def getAllTorrents(table):
 
     try:
         os.mkdir("torrents")
-    except e:
-        print e
+    except:
+        print "cannot create dir - torrents!!"
 
     try:
         conn=MySQLdb.connect(host='127.0.0.1',user=MYSQL_USER,passwd=MYSQL_PW,port=3306,charset="UTF8")
