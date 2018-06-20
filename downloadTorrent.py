@@ -7,6 +7,9 @@ import urllib,urllib2,os,MySQLdb,gzip
 from io import BytesIO
 from btdht import Parser
 
+MYSQL_USER = 'localuser'
+MYSQL_PW = 'lc2018'
+
 def save(filename, content):
 
     try:
@@ -46,7 +49,7 @@ def getAllTorrents(table):
         print e
 
     try:
-        conn=MySQLdb.connect(host='127.0.0.1',user='root',passwd='456',port=3306,charset="UTF8")
+        conn=MySQLdb.connect(host='127.0.0.1',user=MYSQL_USER,passwd=MYSQL_PW,port=3306,charset="UTF8")
         cur=conn.cursor()
         conn.select_db('dht')
         sql="select * from "+table
