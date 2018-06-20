@@ -14,4 +14,4 @@ it will rand sample 8 node by querying a specified hash_info
 '''
 RANDOM_FIND_PEERS = False
 #www.whereismyip.com
-SELF_LAN_IP="123.138.40.131"
+SELF_LAN_IP="104.207.135.85"

@@ -16,7 +16,7 @@ class HashTable(object):
         #the mutex to access the critical resource
         self.lock = threading.Lock()
         try:
-            self.conn=MySQLdb.connect(host='127.0.0.1',user='root',passwd='456',port=3306,charset="UTF8")
+            self.conn=MySQLdb.connect(host='127.0.0.1',user='localuser',passwd='lc2018',port=3306,charset="UTF8")
             self.cur=self.conn.cursor()
             self.conn.select_db('dht')
         except MySQLdb.Error,e:
