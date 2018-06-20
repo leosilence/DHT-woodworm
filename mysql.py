@@ -71,7 +71,7 @@ def executeSQL(sql):
 #sql="update hash_info set hash_info.info='Captain's VgHD DVD 21 a0472 to a0501.iso' where hash_info.hash='5302c42cdf439cafa98f048e8367b3ff4829628e'".encode('utf-8')
 #print sql
 #executeSQL(sql)
-#createDatabase()       
+#createDatabase()
 #insertInfo("4cde5b50a8930315b479931f6872a3db59575366")
 selectAllTable("hash_info")
 #selectAllTable("peerIP")
