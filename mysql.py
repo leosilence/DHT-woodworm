@@ -2,9 +2,12 @@
 import MySQLdb
 import os
 
+MYSQL_USER = 'localuser'
+MYSQL_PW = 'lc2018'
+
 def createDatabase():
     try:
-        conn=MySQLdb.connect(host='127.0.0.1',user='localuser',passwd='lc2018',port=3306,charset="UTF8")
+        conn=MySQLdb.connect(host='127.0.0.1',user=MYSQL_USER,passwd=MYSQL_PW,port=3306,charset="UTF8")
         cur=conn.cursor()
         cur.execute('create database if not exists dht')
         conn.select_db('dht')
@@ -20,7 +23,7 @@ def createDatabase():
 
 def insertInfo(hash):
     try:
-        conn=MySQLdb.connect(host='127.0.0.1',user='root',passwd='456',port=3306,charset="UTF8")
+        conn=MySQLdb.connect(host='127.0.0.1',user=MYSQL_USER,passwd=MYSQL_PW,port=3306,charset="UTF8")
         cur=conn.cursor()
         conn.select_db('dht')
         sql="insert into hash_info(hash,info) values('%s','%s')"%(hash,"the info will added later")
@@ -33,7 +36,7 @@ def insertInfo(hash):
 
 def selectAllTable(table):
     try:
-        conn=MySQLdb.connect(host='127.0.0.1',user='root',passwd='456',port=3306,charset="UTF8")
+        conn=MySQLdb.connect(host='127.0.0.1',user=MYSQL_USER,passwd=MYSQL_PW,port=3306,charset="UTF8")
         cur=conn.cursor()
         conn.select_db('dht')
         sql="select * from "+table
@@ -53,7 +56,7 @@ def selectAllTable(table):
 
 def executeSQL(sql):
     try:
-        conn=MySQLdb.connect(host='127.0.0.1',user='root',passwd='456',port=3306,charset="UTF8")
+        conn=MySQLdb.connect(host='127.0.0.1',user=MYSQL_USER,passwd=MYSQL_PW,port=3306,charset="UTF8")
         cur=conn.cursor()
         conn.select_db('dht')
         cur.execute(sql)
