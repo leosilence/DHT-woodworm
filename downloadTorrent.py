@@ -45,7 +45,7 @@ def getAllTorrents(table):
 
     try:
         os.mkdir("torrents")
-    except WindowsError,e:
+    except e:
         print e
 
     try:
